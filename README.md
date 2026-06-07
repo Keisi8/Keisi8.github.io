@@ -52,7 +52,7 @@ This workflow sits between the ITSM system (e.g., Zendesk, Jira) and the custome
 ## Data Protection & Security Considerations
 
 ### Credential Management
-API keys and OAuth tokens are stored as encrypted credentials within n8n's credential manager rather than hardcoded into workflow parameters. This ensures sensitive values are never exposed in the workflow JSON or version history. Google OAuth access was granted with the minimum required permissions, allowing access to specific file access rather than broad Drive access to following the principle of least privilege.
+API keys and OAuth tokens are stored as encrypted credentials within n8n's credential manager rather than hardcoded into workflow parameters. This ensures sensitive values are never exposed in the workflow JSON or version history. Google OAuth access was granted with the minimum required permissions, allowing access to specific file access rather than broad Drive access, following the principle of least privilege.
 
 For a production environment, in a company context, the respective product and compliance guidelines, and restrictions would be used. 
 
@@ -124,13 +124,15 @@ Both workflows were tested end-to-end with 13 simulated tickets across all four 
 
 ## Reflections & Learnings
 
-**What surprised me:** How intuitive and fast n8n is once you get the hang of it. The visual node structure makes it easy to reason about data flow, and most steps came together quickly once the core logic was clear.
+**Meaningful impact can be achieved with low-code, well-scoped automation:** Each step in this workflow is simple: receive data, call an API, parse a response, write a row. The power comes from connecting them together. Low-code tools like n8n make that accessible in a quick and scalable manner. This is based on the assumption that the entire tech stack in the automation is compliant and offers API connection capabilities.
 
-**What I would do differently in a real company environment:** I would not instruct the LLM on platform modules directly in the system prompt. Instead, I would connect it to a retrieval layer or a pre-existing internal knowledge base — many companies are already building these as part of their customer service automation stack. This would make the suggestions more accurate and reduce maintenance overhead when the product changes.
+**Hard-coded context doesn't scale:** In a real company, I would connect the LLM to a retrieval layer or internal knowledge base rather than instructing it on modules directly. This makes suggestions more accurate and reduces maintenance when the product evolves.
 
-**What this workflow solves:** It goes hand in hand with an automated customer service agent. If one does not already exist, it cuts manual triage work and reduces the mental load on customer service agents to diagnose and route tickets. The spike detector adds a strategic layer for CX operations managers to track recurring issues that may need deeper resolution beyond a one-off fix.
+**The workflow's value is in the layer it adds:** It goes hand in hand with an automated customer service agent. It cuts manual triage work and reduces the mental load on agents to diagnose and route tickets. The spike detector adds an additional layer for CX ops managers to investigate recurring issues.
 
-**Next iteration:** Further development of the alerts layer to extract richer insights — for example, trending issue summaries per module, week-on-week comparisons, or escalation recommendations. Connecting to a real ITSM system via its native API would be the first production step.
+**The alerting layer has room to grow:** The next iteration would explore richer insights such as trending issue summaries per module, week-on-week comparisons, or escalation recommendations.
+
+**Data protection goes beyond the database:** This project used synthetic data only, and no real customer information was processed. In production, replacing Google Sheets with an enterprise database handles storage security, but data protection responsibilities don't stop there. User access rights, collection of only the essential data, retention policies, and a Data Protection Impact Assessment must be implemented before actual customer data is collected or processed through new tools. The LLM processing step requires particular attention. Ticket content sent to an external API provider may include personal data, requiring additional checks and agreements before establishing a connection. Credentials in this project are stored in n8n's encrypted credential manager with OAuth scoped to the minimum required permissions.
 
 ---
 
