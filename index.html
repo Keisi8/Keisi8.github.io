@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -648,7 +649,7 @@
     <h1>AI-Powered Support Ticket<br>Triage & Routing</h1>
     <p class="hero-sub">An automated approach to understanding, routing, and troubleshooting customer service tickets — and drawing attention to issues that may need discussion at a product level.</p>
     <div class="transparency-note">
-      <strong style="color: var(--ink); font-weight: 500;">Transparency note.</strong> Built with AI assistance (Claude) for guidance, code suggestions, and troubleshooting. All workflow design decisions, architectural choices, and conclusions are my own. Using AI as a development partner is intentional — it reflects how I believe modern automation work should be approached.
+      <strong style="color: var(--ink); font-weight: 500;">Transparency note.</strong> Built with AI assistance (Claude) for guidance, code suggestions, and troubleshooting. All workflow design decisions, solution definitions, and conclusions are my own.
     </div>
     <div class="hero-tags">
       <span class="tag blue">n8n</span>
@@ -860,6 +861,11 @@
         <div class="reflection-num">04</div>
         <div class="reflection-title">The alerting layer has room to grow</div>
         <p class="reflection-body">The next iteration would explore richer insights — trending issue summaries per module, week-on-week comparisons, or escalation recommendations. Connecting to a real ITSM system via its native API would be the first production step.</p>
+      </div>
+      <div class="reflection-card" style="grid-column: 1 / -1;">
+        <div class="reflection-num">05</div>
+        <div class="reflection-title">Data protection goes beyond the database</div>
+        <p class="reflection-body">This prototype used simulated data only — no real customer information was processed. In production, replacing Google Sheets with an enterprise database handles storage security, but data protection responsibilities don't stop there. The implementing organisation remains responsible for access controls, data minimisation, retention policies, and a DPIA before go-live. The LLM processing step requires particular attention — ticket content sent to an external API provider may include personal data, requiring a Data Processing Agreement with the provider regardless of what database sits downstream. Credentials in this project are stored in n8n's encrypted credential manager with OAuth scoped to minimum required permissions.</p>
       </div>
     </div>
   </section>
