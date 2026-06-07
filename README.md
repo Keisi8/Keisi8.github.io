@@ -134,16 +134,4 @@ Both workflows were tested end-to-end with 13 simulated tickets across all four 
 
 ---
 
-## Project Structure
-
-```
-/
-├── README.md                          # This file
-├── index.html                         # Portfolio page
-├── workflow_ticket_assistant.json     # n8n Workflow 1 export
-└── workflow_spike_detector.json       # n8n Workflow 2 export
-```
-
----
-
 *Built with n8n · Claude API · Google Sheets · Gmail*
