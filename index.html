@@ -647,7 +647,7 @@
   <header class="hero">
     <span class="hero-eyebrow">Portfolio Project — 2025</span>
     <h1>AI-Powered Support Ticket<br>Triage & Routing</h1>
-    <p class="hero-sub">An automated approach to understanding, routing, and troubleshooting customer service tickets — and drawing attention to issues that may need discussion at a product level.</p>
+    <p class="hero-sub">An automated approach to understanding, routing, and troubleshooting customer service tickets, and drawing attention to issues that may need discussion at a product level.</p>
     <div class="transparency-note">
       <strong style="color: var(--ink); font-weight: 500;">Transparency note.</strong> Built with AI assistance (Claude) for guidance, code suggestions, and troubleshooting. All workflow design decisions, solution definitions, and conclusions are my own.
     </div>
@@ -668,13 +668,13 @@
   <section id="who">
     <div class="section-eyebrow">Who it's for</div>
     <h2>Three roles, three outcomes</h2>
-    <p class="section-sub">This workflow enables smoother communication across the entire support chain — from the customer all the way to the people responsible for systemic issues.</p>
+    <p class="section-sub">This workflow enables smoother communication across the entire support chain, starting from the customer all the way to the parties responsible for changes on a product level.</p>
 
     <div class="roles-grid">
       <div class="role-card">
         <span class="role-icon">💬</span>
         <div class="role-title">Customer Service Agent</div>
-        <p class="role-desc">Receives an AI-generated summary, troubleshooting steps, and a suggested reply before fully reading the ticket — reducing mental load and speeding up first response.</p>
+        <p class="role-desc">Receives an AI-generated summary, troubleshooting steps, and a suggested reply before fully reading the ticket, reducing mental load and speeding up first response.</p>
       </div>
       <div class="role-card">
         <span class="role-icon">⚙️</span>
@@ -684,7 +684,7 @@
       <div class="role-card">
         <span class="role-icon">📊</span>
         <div class="role-title">CX Operations Manager</div>
-        <p class="role-desc">Receives automated alerts when a specific module accumulates recurring tickets — a signal that something systemic may need cross-functional attention.</p>
+        <p class="role-desc">Receives automated alerts when a specific module accumulates recurring tickets. This might be a signal that something systemic may need cross-functional attention.</p>
       </div>
     </div>
   </section>
@@ -695,7 +695,7 @@
   <section id="workflow1">
     <div class="section-eyebrow">Workflow 1</div>
     <h2>Ticket Classification &<br>Troubleshooting Helper</h2>
-    <p class="section-sub">Runs continuously in the background. Every incoming support ticket is automatically processed and logged — no human touch required.</p>
+    <p class="section-sub">Runs continuously in the background. Every incoming support ticket is automatically processed and logged with no manual effort required. </p>
 
     <div class="workflow-wrap">
       <div class="workflow-header">
@@ -708,14 +708,14 @@
             <div class="step-dot">1</div>
             <div class="step-content">
               <div class="step-title">Ticket arrives via webhook</div>
-              <p class="step-desc">An incoming ticket is received as a JSON payload containing ticket ID, subject line, and body — simulating a real ITSM integration such as Zendesk or Jira.</p>
+              <p class="step-desc">An incoming ticket is received as a JSON payload containing ticket ID, subject line, and body, simulating a real ITSM integration such as Zendesk or Jira.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-dot">2</div>
             <div class="step-content">
               <div class="step-title">LLM analysis via Claude API</div>
-              <p class="step-desc">The ticket is sent to the Claude API with module context in the system prompt. The model returns category, urgency, a one-sentence summary, troubleshooting steps, and a suggested customer reply — all as structured JSON.</p>
+              <p class="step-desc">The ticket is sent to the Claude API with module (product feature/offering) context in the system prompt. The model returns category, urgency, a one-sentence summary, troubleshooting steps, and a suggested customer reply, all as structured JSON.</p>
             </div>
           </div>
           <div class="step">
@@ -729,7 +729,7 @@
             <div class="step-dot">4</div>
             <div class="step-content">
               <div class="step-title">Logged to Google Sheets</div>
-              <p class="step-desc">All fields — including a generated ISO timestamp — are appended to a shared ticket log, creating an auditable record and the data foundation for the spike detector.</p>
+              <p class="step-desc">All fields, with a generated ISO timestamp added, are appended to a shared ticket log. For simplicity, Google Sheets was used in this case. This will serve as a starting point for the second layer of this solution.</p>
             </div>
           </div>
         </div>
@@ -737,7 +737,7 @@
     </div>
 
     <div class="output-wrap">
-      <div class="output-label">Sample output — Claude API response, parsed</div>
+      <div class="output-label">Sample output: Claude API response, parsed</div>
       <div class="output-box">
         <div class="output-chrome">
           <div class="dot dot-red"></div>
@@ -765,7 +765,7 @@
   <section id="workflow2">
     <div class="section-eyebrow">Workflow 2</div>
     <h2>CX Lead<br>Alerting Tool</h2>
-    <p class="section-sub">Runs automatically every 15 minutes. Monitors the ticket log for unusual concentrations of issues within a single module — shifting CX operations from reactive to proactive.</p>
+    <p class="section-sub">Runs automatically every 15 minutes. Monitors the ticket log for unusual concentrations of issues within a single module, drawing the attention of CX operations to potential deeper issues within the module.</p>
 
     <div class="workflow-wrap">
       <div class="workflow-header">
@@ -778,7 +778,7 @@
             <div class="step-dot green">1</div>
             <div class="step-content">
               <div class="step-title">Scheduled trigger</div>
-              <p class="step-desc">Fires automatically every 15 minutes. In a production environment this would run every 30 minutes.</p>
+              <p class="step-desc">Fires automatically every 60 minutes.</p>
             </div>
           </div>
           <div class="step">
@@ -799,7 +799,7 @@
             <div class="step-dot green">4</div>
             <div class="step-content">
               <div class="step-title">Conditional alert email</div>
-              <p class="step-desc">If a spike is detected, an HTML email is sent to the CX Operations Manager summarising which module is affected, how many tickets, and which IDs — with a recommendation to assess whether the pattern indicates a systemic issue.</p>
+              <p class="step-desc">If a spike is detected, an HTML email is sent to the CX Operations Manager summarising which module is affected, how many tickets, and which IDs, attaching a brief recommendation to assess whether the pattern indicates a systemic issue.</p>
             </div>
           </div>
         </div>
@@ -820,7 +820,7 @@
         </div>
         <div class="email-body">
           <div class="email-alert-banner">⚠ Module Activity Spike Detected</div>
-          <p class="email-p">4 tickets have been recorded in the last 60 minutes. The module with the highest concentration is <strong>Payroll</strong> with 4 tickets — this may indicate a systemic issue beyond individual bugs.</p>
+          <p class="email-p">4 tickets have been recorded in the last 60 minutes. The module with the highest concentration is <strong>Payroll</strong> with 4 tickets. This may indicate a systemic issue beyond individual bugs.</p>
           <table class="email-table">
             <tr><td>Top Module</td><td style="color:#0071e3; font-weight:600;">Payroll</td></tr>
             <tr><td>Tickets in Module</td><td>4</td></tr>
@@ -844,8 +844,8 @@
     <div class="reflections-grid">
       <div class="reflection-card">
         <div class="reflection-num">01</div>
-        <div class="reflection-title">n8n is more intuitive than expected</div>
-        <p class="reflection-body">The visual node structure makes it easy to reason about data flow, and most steps came together quickly once the logic was clear on paper first. The learning curve flattened fast.</p>
+        <div class="reflection-title"> Meaningful impact can be achieved with low-code, well-scoped automation.</div>
+        <p class="reflection-body"> Each step in this workflow is simple: receive data, call an API, parse a response, write a row. The power comes from connecting them together. Low-code tools like n8n make that accessible in a quick and scalable manner. This is based on the assumption that the entire tech stack in the automation is compliant and offers API connection capabilities. </p>
       </div>
       <div class="reflection-card">
         <div class="reflection-num">02</div>
@@ -855,17 +855,17 @@
       <div class="reflection-card">
         <div class="reflection-num">03</div>
         <div class="reflection-title">The workflow's value is in the layer it adds</div>
-        <p class="reflection-body">It goes hand in hand with an automated customer service agent. It cuts manual triage work and reduces the mental load on agents to diagnose and route tickets. The spike detector adds a strategic layer for CX ops managers to catch recurring issues.</p>
+        <p class="reflection-body">It goes hand in hand with an automated customer service agent. It cuts manual triage work and reduces the mental load on agents to diagnose and route tickets. The spike detector adds a additional layer for CX ops managers to investigate recurring issues.</p>
       </div>
       <div class="reflection-card">
         <div class="reflection-num">04</div>
         <div class="reflection-title">The alerting layer has room to grow</div>
-        <p class="reflection-body">The next iteration would explore richer insights — trending issue summaries per module, week-on-week comparisons, or escalation recommendations. Connecting to a real ITSM system via its native API would be the first production step.</p>
+        <p class="reflection-body">The next iteration would explore richer insights such as trending issue summaries per module, week-on-week comparisons, or escalation recommendations. </p>
       </div>
       <div class="reflection-card" style="grid-column: 1 / -1;">
         <div class="reflection-num">05</div>
         <div class="reflection-title">Data protection goes beyond the database</div>
-        <p class="reflection-body">This prototype used simulated data only — no real customer information was processed. In production, replacing Google Sheets with an enterprise database handles storage security, but data protection responsibilities don't stop there. The implementing organisation remains responsible for access controls, data minimisation, retention policies, and a DPIA before go-live. The LLM processing step requires particular attention — ticket content sent to an external API provider may include personal data, requiring a Data Processing Agreement with the provider regardless of what database sits downstream. Credentials in this project are stored in n8n's encrypted credential manager with OAuth scoped to minimum required permissions.</p>
+        <p class="reflection-body">This project used synthetic data only, and no real customer information was processed. In production, replacing Google Sheets with an enterprise database handles storage security, but data protection responsibilities don't stop there. User access rights, collection of only the essential data, retention policies, and a Data Protection Impact Assessment must be implemented before actual customer data is collected or processed through new tools. The LLM processing step requires particular attention. Ticket content sent to an external API provider may include personal data, requiring additional checks and agreements before establishing a connection. Credentials in this project are stored in n8n's encrypted credential manager with OAuth scoped to the minimum required permissions.</p>
       </div>
     </div>
   </section>
