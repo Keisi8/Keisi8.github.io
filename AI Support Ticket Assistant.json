@@ -1,21 +1,27 @@
 {
   "name": "AI Support Ticket Assistant",
+  "_sanitization_notes": {
+    "removed_fields": [
+      "Webhook path and webhookId: replaced with placeholder — the actual path was a UUID that forms part of the live webhook URL. Publishing it could allow anyone to send arbitrary data into the workflow while active.",
+      "Google Sheets document ID and URL: replaced with placeholder — the document ID uniquely identifies the private spreadsheet. Combined with OAuth access it could allow unauthorized reads or writes.",
+      "Anthropic credential ID: replaced with placeholder — this is an internal n8n reference ID for the stored API credential. Not an API key itself, but removed to avoid exposing internal credential structure.",
+      "Google Sheets OAuth2 credential ID: replaced with placeholder — same reason as above.",
+      "n8n instance ID: replaced with placeholder — uniquely identifies the n8n cloud instance this workflow was built on. Removed as a general privacy measure."
+    ]
+  },
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "18740399-115e-4882-97ad-b564185078fd",
+        "path": "YOUR_WEBHOOK_PATH",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
-      "position": [
-        0,
-        0
-      ],
+      "position": [0, 0],
       "id": "591ae95f-de7f-406a-bcc9-5189deef1bed",
       "name": "Webhook",
-      "webhookId": "18740399-115e-4882-97ad-b564185078fd"
+      "webhookId": "YOUR_WEBHOOK_PATH"
     },
     {
       "parameters": {
@@ -39,15 +45,12 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
-      "position": [
-        208,
-        0
-      ],
+      "position": [208, 0],
       "id": "089b6ed8-e004-482c-a548-df0347ed9f7b",
       "name": "HTTP Request",
       "credentials": {
         "anthropicApi": {
-          "id": "kYfdAlAdpjaOcVVY",
+          "id": "YOUR_ANTHROPIC_CREDENTIAL_ID",
           "name": "Anthropic account"
         }
       }
@@ -58,10 +61,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        416,
-        0
-      ],
+      "position": [416, 0],
       "id": "37be6555-2e07-4943-9943-250f5915283b",
       "name": "Code in JavaScript"
     },
@@ -70,10 +70,10 @@
         "operation": "appendOrUpdate",
         "documentId": {
           "__rl": true,
-          "value": "1U7rX-MB4SpJnDdPkjmqlLK4bI612P9cqnN5XrB54efo",
+          "value": "YOUR_GOOGLE_SHEET_ID",
           "mode": "list",
           "cachedResultName": "CX Ticket Log",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1U7rX-MB4SpJnDdPkjmqlLK4bI612P9cqnN5XrB54efo/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
@@ -91,80 +91,15 @@
             "suggested_reply": "={{ $json.suggested_reply }}",
             "timestamp": "={{ new Date().toISOString() }}"
           },
-          "matchingColumns": [
-            "ticket_id"
-          ],
+          "matchingColumns": ["ticket_id"],
           "schema": [
-            {
-              "id": "ticket_id",
-              "displayName": "ticket_id",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "category",
-              "displayName": "category",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "urgency",
-              "displayName": "urgency",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "summary",
-              "displayName": "summary",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "troubleshooting_steps",
-              "displayName": "troubleshooting_steps",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "suggested_reply",
-              "displayName": "suggested_reply",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "timestamp",
-              "displayName": "timestamp",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
+            { "id": "ticket_id", "displayName": "ticket_id", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "category", "displayName": "category", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "urgency", "displayName": "urgency", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "summary", "displayName": "summary", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "troubleshooting_steps", "displayName": "troubleshooting_steps", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "suggested_reply", "displayName": "suggested_reply", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false },
+            { "id": "timestamp", "displayName": "timestamp", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true, "removed": false }
           ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
@@ -173,15 +108,12 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
-      "position": [
-        624,
-        0
-      ],
+      "position": [624, 0],
       "id": "652db366-1f95-4c53-a3f2-7914be47388e",
       "name": "Append or update row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "8xabkSMczE0A9hox",
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
           "name": "Google Sheets OAuth2 API"
         }
       }
@@ -190,37 +122,13 @@
   "pinData": {},
   "connections": {
     "Webhook": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "HTTP Request", "type": "main", "index": 0 }]]
     },
     "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "Code in JavaScript",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "Code in JavaScript", "type": "main", "index": 0 }]]
     },
     "Code in JavaScript": {
-      "main": [
-        [
-          {
-            "node": "Append or update row in sheet",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": [[{ "node": "Append or update row in sheet", "type": "main", "index": 0 }]]
     }
   },
   "active": false,
@@ -231,7 +139,7 @@
   "versionId": "35cd7ad7-5c13-4cea-be60-4f4680e770eb",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "f84036b34741501ad250aac685377775706d2722f7c9d2f1ef210080e486359d"
+    "instanceId": "YOUR_INSTANCE_ID"
   },
   "id": "XaI2XyGscBMkFEGV",
   "tags": []
