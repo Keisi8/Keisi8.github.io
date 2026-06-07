@@ -49,6 +49,22 @@ This workflow sits between the ITSM system (e.g., Zendesk, Jira) and the custome
 
 ---
 
+## Data Protection & Security Considerations
+
+### Credential Management
+API keys and OAuth tokens are stored as encrypted credentials within n8n's credential manager rather than hardcoded into workflow parameters. This ensures sensitive values are never exposed in the workflow JSON or version history. Google OAuth access was granted with the minimum required permissions, allowing access to specific file access rather than broad Drive access to following the principle of least privilege.
+
+For a production environment, in a company context, the respective product and compliance guidelines, and restrictions would be used. 
+
+### GDPR & Data Protection
+This prototype was built using simulated ticket data only — no real customer information was processed at any point.
+
+In a production deployment, the storage layer would be replaced by an enterprise database with its own security controls and compliance certifications. However, data protection responsibilities extend beyond storage infrastructure. Regardless of which database is used, the implementing organisation remains responsible for: defining a valid legal basis for automated processing, storing only data that is necessary, setting clear retention and deletion policies for ticket log data, and conducting a Data Protection Impact Assessment (DPIA) before going live.
+
+Particular attention would be required around the LLM processing step. Ticket content, which may include employee names, salary details, or other personal data, is sent to an external API provider. This requires a Data Processing Agreement with the LLM provider and a clear assessment of whether any data is retained beyond the scope of the individual request. This consideration applies independently of what database is used. 
+
+---
+
 ## Workflow 1 — AI Support Ticket Assistant
 
 This workflow runs continuously in the background, triggered by incoming tickets.
