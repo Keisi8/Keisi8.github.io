@@ -1,7 +1,7 @@
 # Keisi8.github.io
 Personal Learning Portfolio
 
-# AI-Powered Support Ticket Triage & Routing
+# Automated Ticket Triage & Routing
 
 A portfolio project demonstrating an end-to-end automation workflow that uses a large language model to assist customer service agents in triaging and responding to HR software support tickets, while proactively alerting CX operations managers to recurring issues on a product module level. 
 
