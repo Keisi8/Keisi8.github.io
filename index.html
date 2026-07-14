@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --bg: #ffffff;
     --bg2: #f5f5f7;
@@ -35,9 +33,7 @@
     --radius: 18px;
     --radius-sm: 12px;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--ink);
@@ -46,13 +42,11 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
   .wrap {
     max-width: 820px;
     margin: 0 auto;
     padding: 0 24px;
   }
-
   /* ── NAV ── */
   nav {
     position: sticky;
@@ -64,7 +58,6 @@
     border-bottom: 1px solid var(--border);
     padding: 0 24px;
   }
-
   .nav-inner {
     max-width: 820px;
     margin: 0 auto;
@@ -73,34 +66,29 @@
     align-items: center;
     justify-content: space-between;
   }
-
   .nav-title {
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
     letter-spacing: -0.01em;
   }
-
   .nav-links {
     display: flex;
-    gap: 24px;
+    gap: 20px;
   }
-
   .nav-links a {
     font-size: 13px;
     color: var(--ink-light);
     text-decoration: none;
     transition: color 0.15s;
+    white-space: nowrap;
   }
-
   .nav-links a:hover { color: var(--accent); }
-
   /* ── HERO ── */
   .hero {
     padding: 100px 0 80px;
     text-align: center;
   }
-
   .hero-eyebrow {
     display: inline-block;
     font-size: 13px;
@@ -109,7 +97,6 @@
     letter-spacing: 0.01em;
     margin-bottom: 20px;
   }
-
   h1 {
     font-size: clamp(36px, 6vw, 60px);
     font-weight: 600;
@@ -118,7 +105,6 @@
     color: var(--ink);
     margin-bottom: 20px;
   }
-
   .hero-sub {
     font-size: 19px;
     font-weight: 300;
@@ -128,7 +114,6 @@
     margin: 0 auto 36px;
     letter-spacing: -0.01em;
   }
-
   .transparency-note {
     background: var(--bg2);
     border: 1px solid var(--border-strong);
@@ -141,14 +126,12 @@
     margin: 0 auto 36px;
     text-align: left;
   }
-
   .hero-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
   }
-
   .tag {
     font-size: 13px;
     font-weight: 400;
@@ -159,27 +142,22 @@
     background: var(--bg2);
     letter-spacing: -0.01em;
   }
-
   .tag.blue {
     border-color: var(--accent-border);
     color: var(--accent);
     background: var(--accent-dim);
   }
-
   /* ── DIVIDER ── */
   .divider {
     height: 1px;
     background: var(--border);
     margin: 0;
   }
-
   /* ── SECTIONS ── */
   section {
     padding: 80px 0;
   }
-
   section + .divider { display: block; }
-
   .section-eyebrow {
     font-size: 13px;
     font-weight: 500;
@@ -188,7 +166,6 @@
     margin-bottom: 12px;
     text-align: center;
   }
-
   h2 {
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 600;
@@ -198,7 +175,6 @@
     line-height: 1.1;
     text-align: center;
   }
-
   .section-sub {
     font-size: 17px;
     color: var(--ink-light);
@@ -209,32 +185,46 @@
     font-weight: 300;
     letter-spacing: -0.01em;
   }
-
-  /* ── ROLES GRID ── */
+  /* ── PROSE (problem statement) ── */
+  .prose {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .prose p {
+    font-size: 16px;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 16px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  /* ── ROLES / TOOLS GRID ── */
   .roles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-
   .role-card {
     background: var(--bg2);
     border-radius: var(--radius);
     padding: 28px 24px;
     transition: transform 0.2s, box-shadow 0.2s;
   }
-
   .role-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-
   .role-icon {
     font-size: 28px;
     margin-bottom: 14px;
     display: block;
   }
-
   .role-title {
     font-size: 15px;
     font-weight: 600;
@@ -242,13 +232,11 @@
     margin-bottom: 8px;
     letter-spacing: -0.01em;
   }
-
   .role-desc {
     font-size: 13px;
     color: var(--ink-light);
     line-height: 1.65;
   }
-
   /* ── WORKFLOW CARD ── */
   .workflow-wrap {
     background: var(--bg2);
@@ -257,7 +245,6 @@
     margin-bottom: 20px;
     box-shadow: var(--shadow-sm);
   }
-
   .workflow-header {
     padding: 20px 28px;
     border-bottom: 1px solid var(--border);
@@ -265,7 +252,6 @@
     align-items: center;
     gap: 12px;
   }
-
   .workflow-badge {
     font-size: 11px;
     font-weight: 600;
@@ -277,36 +263,30 @@
     color: var(--accent);
     border: 1px solid var(--accent-border);
   }
-
   .workflow-badge.green {
     background: var(--green-dim);
     color: #248a3d;
     border-color: rgba(52,199,89,0.25);
   }
-
   .workflow-name {
     font-size: 17px;
     font-weight: 500;
     color: var(--ink);
     letter-spacing: -0.01em;
   }
-
   .workflow-body {
     padding: 28px;
   }
-
   /* ── STEPS ── */
   .steps {
     display: flex;
     flex-direction: column;
   }
-
   .step {
     display: flex;
     gap: 18px;
     position: relative;
   }
-
   .step:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -316,7 +296,6 @@
     height: calc(100% - 12px);
     background: var(--border-strong);
   }
-
   .step-dot {
     flex-shrink: 0;
     width: 34px;
@@ -334,18 +313,15 @@
     color: var(--accent);
     border: 1px solid var(--accent-border);
   }
-
   .step-dot.green {
     background: var(--green-dim);
     color: #248a3d;
     border-color: rgba(52,199,89,0.25);
   }
-
   .step-content {
     padding: 4px 0 28px;
     flex: 1;
   }
-
   .step-title {
     font-size: 15px;
     font-weight: 500;
@@ -353,18 +329,15 @@
     margin-bottom: 4px;
     letter-spacing: -0.01em;
   }
-
   .step-desc {
     font-size: 13px;
     color: var(--ink-light);
     line-height: 1.65;
   }
-
   /* ── OUTPUT BOX ── */
   .output-wrap {
     margin-top: 24px;
   }
-
   .output-label {
     font-size: 13px;
     font-weight: 500;
@@ -372,14 +345,12 @@
     margin-bottom: 10px;
     letter-spacing: -0.01em;
   }
-
   .output-box {
     background: #1c1c1e;
     border-radius: var(--radius-sm);
     overflow: hidden;
     box-shadow: var(--shadow-md);
   }
-
   .output-chrome {
     display: flex;
     align-items: center;
@@ -387,19 +358,16 @@
     padding: 12px 16px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-
   .dot { width: 10px; height: 10px; border-radius: 50%; }
   .dot-red { background: #ff5f57; }
   .dot-yellow { background: #febc2e; }
   .dot-green { background: #28c840; }
-
   .output-chrome-title {
     font-size: 12px;
     color: rgba(255,255,255,0.3);
     margin-left: 8px;
     font-weight: 400;
   }
-
   pre {
     padding: 20px;
     font-family: 'SF Mono', 'Menlo', monospace;
@@ -408,16 +376,43 @@
     color: rgba(255,255,255,0.65);
     overflow-x: auto;
   }
-
   .k { color: #ff9f0a; }
   .s { color: #32d74b; }
   .n { color: #64d2ff; }
-
+  /* ── SCREENSHOT ── */
+  .screenshot-wrap {
+    margin-top: 24px;
+  }
+  .screenshot-box {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-strong);
+    background: var(--bg2);
+  }
+  .screenshot-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .screenshot-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 60px 20px;
+    color: var(--ink-dim);
+    font-size: 13px;
+    text-align: center;
+  }
+  .screenshot-placeholder .ph-icon {
+    font-size: 28px;
+  }
   /* ── EMAIL PREVIEW ── */
   .email-wrap {
     margin-top: 24px;
   }
-
   .email-preview {
     background: white;
     border-radius: var(--radius);
@@ -425,7 +420,6 @@
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border);
   }
-
   .email-top {
     background: var(--bg2);
     padding: 16px 20px;
@@ -434,29 +428,23 @@
     align-items: center;
     gap: 8px;
   }
-
   .email-dot { width: 10px; height: 10px; border-radius: 50%; }
-
   .email-meta-block {
     margin-left: 8px;
   }
-
   .email-subject-line {
     font-size: 13px;
     font-weight: 600;
     color: var(--ink);
   }
-
   .email-from {
     font-size: 11px;
     color: var(--ink-dim);
     margin-top: 1px;
   }
-
   .email-body {
     padding: 24px;
   }
-
   .email-alert-banner {
     background: #fff3cd;
     border-left: 3px solid #ff9500;
@@ -467,14 +455,12 @@
     font-weight: 600;
     color: #b86800;
   }
-
   .email-p {
     font-size: 13px;
     color: #333;
     line-height: 1.65;
     margin-bottom: 14px;
   }
-
   .email-table {
     width: 100%;
     border-collapse: collapse;
@@ -484,23 +470,18 @@
     overflow: hidden;
     border: 1px solid #e5e5ea;
   }
-
   .email-table td {
     padding: 9px 14px;
     border-bottom: 1px solid #e5e5ea;
   }
-
   .email-table tr:last-child td { border-bottom: none; }
-
   .email-table td:first-child {
     background: #f5f5f7;
     color: #6e6e73;
     width: 42%;
     font-weight: 500;
   }
-
   .email-table td:last-child { color: #1d1d1f; }
-
   .email-sig {
     font-size: 11px;
     color: #a1a1a6;
@@ -508,20 +489,17 @@
     padding-top: 12px;
     margin-top: 16px;
   }
-
   /* ── REFLECTIONS ── */
   .reflections-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-
   .reflection-card {
     background: var(--bg2);
     border-radius: var(--radius);
     padding: 28px 24px;
   }
-
   .reflection-num {
     font-size: 13px;
     font-weight: 600;
@@ -529,7 +507,6 @@
     margin-bottom: 10px;
     letter-spacing: 0.01em;
   }
-
   .reflection-title {
     font-size: 17px;
     font-weight: 600;
@@ -538,13 +515,11 @@
     letter-spacing: -0.01em;
     line-height: 1.3;
   }
-
   .reflection-body {
     font-size: 13px;
     color: var(--ink-light);
     line-height: 1.65;
   }
-
   /* ── CTA ── */
   .cta-section {
     padding: 80px 0;
@@ -553,7 +528,6 @@
     border-radius: var(--radius);
     margin: 0 0 80px;
   }
-
   .btn-row {
     display: flex;
     flex-wrap: wrap;
@@ -561,7 +535,6 @@
     justify-content: center;
     margin-top: 32px;
   }
-
   .btn {
     display: inline-flex;
     align-items: center;
@@ -575,49 +548,42 @@
     letter-spacing: -0.01em;
     cursor: pointer;
   }
-
   .btn-primary {
     background: var(--accent);
     color: white;
     border: none;
   }
-
   .btn-primary:hover { background: var(--accent-hover); }
-
   .btn-ghost {
     background: white;
     color: var(--ink);
     border: 1px solid var(--border-strong);
   }
-
   .btn-ghost:hover { background: var(--bg2); }
-
   /* ── FOOTER ── */
   footer {
     padding: 32px 0;
     border-top: 1px solid var(--border);
     text-align: center;
   }
-
   footer p {
     font-size: 13px;
     color: var(--ink-dim);
     letter-spacing: -0.01em;
   }
-
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
   .hero { animation: fadeUp 0.6s ease both; }
   section { animation: fadeUp 0.6s ease both; }
   section:nth-of-type(1) { animation-delay: 0.05s; }
   section:nth-of-type(2) { animation-delay: 0.1s; }
   section:nth-of-type(3) { animation-delay: 0.15s; }
   section:nth-of-type(4) { animation-delay: 0.2s; }
-
+  section:nth-of-type(5) { animation-delay: 0.25s; }
+  section:nth-of-type(6) { animation-delay: 0.3s; }
   @media (max-width: 600px) {
     .roles-grid { grid-template-columns: 1fr; }
     .reflections-grid { grid-template-columns: 1fr; }
@@ -627,26 +593,25 @@
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
     <span class="nav-title">AI Ticket Triage & Routing</span>
     <div class="nav-links">
+      <a href="#problem">The problem</a>
       <a href="#who">Who it's for</a>
+      <a href="#tools">Tools used</a>
       <a href="#workflow1">Workflow 1</a>
       <a href="#workflow2">Workflow 2</a>
-      <a href="#reflections">Reflections</a>
+      <a href="#reflections">In production</a>
     </div>
   </div>
 </nav>
-
 <div class="wrap">
-
   <!-- HERO -->
   <header class="hero">
     <span class="hero-eyebrow">Portfolio Project — 2025</span>
-    <h1>AI-Powered Support Ticket<br>Triage & Routing</h1>
+    <h1>Automated Ticket Support:<br>Triage & Routing</h1>
     <p class="hero-sub">An automated approach to understanding, routing, and troubleshooting customer service tickets, and drawing attention to issues that may need discussion at a product level.</p>
     <div class="transparency-note">
       <strong style="color: var(--ink); font-weight: 500;">Transparency note.</strong> Built with AI assistance (Claude) for guidance, code suggestions, and troubleshooting. All workflow design decisions, solution definitions, and conclusions are my own.
@@ -661,15 +626,22 @@
       <span class="tag">Gmail</span>
     </div>
   </header>
-
   <div class="divider"></div>
-
+  <!-- PROBLEM / INSPIRATION -->
+  <section id="problem">
+    <div class="section-eyebrow">The problem</div>
+    <h2>Why I built this</h2>
+    <div class="prose">
+      <p>Customer service agents handling high volumes of support tickets spend significant time on manual triage: reading, categorising, and routing each ticket before any resolution begins. This creates mental overhead, slows response times, and makes it difficult to spot systemic issues early.</p>
+      <p>This project automates the triage layer and adds a pattern detection layer on top, shifting CX operations from reactive to proactive.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
   <!-- WHO -->
   <section id="who">
     <div class="section-eyebrow">Who it's for</div>
     <h2>Three roles, three outcomes</h2>
     <p class="section-sub">This workflow enables smoother communication across the entire support chain, starting from the customer all the way to the parties responsible for changes on a product level.</p>
-
     <div class="roles-grid">
       <div class="role-card">
         <span class="role-icon">💬</span>
@@ -688,15 +660,51 @@
       </div>
     </div>
   </section>
-
   <div class="divider"></div>
-
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="section-eyebrow">Tools used</div>
+    <h2>Why these tools</h2>
+    <p class="section-sub">Each tool was picked to keep the build low-code and fast to iterate on, while still resembling how a real support stack would connect.</p>
+    <div class="roles-grid">
+      <div class="role-card">
+        <span class="role-icon">🔗</span>
+        <div class="role-title">n8n</div>
+        <p class="role-desc">Low-code orchestration layer. Lets the whole pipeline be built and rewired visually, without standing up custom backend infrastructure.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-icon">🧠</span>
+        <div class="role-title">Claude API</div>
+        <p class="role-desc">Does the actual reasoning: classifying tickets, summarising context, and drafting troubleshooting steps and replies as structured JSON.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-icon">📄</span>
+        <div class="role-title">Google Sheets</div>
+        <p class="role-desc">Stand-in for a proper ticket database. Free and easy to inspect while prototyping, with an obvious upgrade path to a real database in production.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-icon">📥</span>
+        <div class="role-title">Webhook & REST API</div>
+        <p class="role-desc">Simulates how a real ITSM tool (e.g. Zendesk, Jira) would push new tickets in, and how the workflow talks to external services like the Claude API.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-icon">{ }</span>
+        <div class="role-title">JavaScript</div>
+        <p class="role-desc">Custom code nodes handle the logic built-in nodes can't: parsing the LLM's response and running the spike-detection calculation.</p>
+      </div>
+      <div class="role-card">
+        <span class="role-icon">✉️</span>
+        <div class="role-title">Gmail</div>
+        <p class="role-desc">Delivers the CX Operations alert email, so a spike in a module reaches a person who can act on it, not just a row in a spreadsheet.</p>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
   <!-- WORKFLOW 1 -->
   <section id="workflow1">
     <div class="section-eyebrow">Workflow 1</div>
     <h2>Ticket Classification &<br>Troubleshooting Helper</h2>
     <p class="section-sub">Runs continuously in the background. Every incoming support ticket is automatically processed and logged with no manual effort required. </p>
-
     <div class="workflow-wrap">
       <div class="workflow-header">
         <span class="workflow-badge">Workflow 01</span>
@@ -735,7 +743,6 @@
         </div>
       </div>
     </div>
-
     <div class="output-wrap">
       <div class="output-label">Sample output: Claude API response, parsed</div>
       <div class="output-box">
@@ -757,16 +764,24 @@
 <span class="k">"suggested_reply"</span>: <span class="s">"Thank you for reaching out — we're treating this as high priority..."</span></pre>
       </div>
     </div>
+    <div class="screenshot-wrap">
+      <div class="output-label">Workflow 1 in n8n</div>
+      <div class="screenshot-box">
+        <!-- Replace src below with the actual screenshot filename once added to this folder -->
+        <img src="Screenshots/workflow_1_canvas.png" alt="n8n canvas showing the Ticket Classification & Troubleshooting Helper workflow: Webhook → HTTP Request → Code in JavaScript → Append or update row in sheet" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="screenshot-placeholder" style="display:none;">
+          <span class="ph-icon">🖼️</span>
+          <span>Image not found at Screenshots/workflow_1_canvas.png</span>
+        </div>
+      </div>
+    </div>
   </section>
-
   <div class="divider"></div>
-
   <!-- WORKFLOW 2 -->
   <section id="workflow2">
     <div class="section-eyebrow">Workflow 2</div>
     <h2>CX Lead<br>Alerting Tool</h2>
     <p class="section-sub">Runs automatically every 15 minutes. Monitors the ticket log for unusual concentrations of issues within a single module, drawing the attention of CX operations to potential deeper issues within the module.</p>
-
     <div class="workflow-wrap">
       <div class="workflow-header">
         <span class="workflow-badge green">Workflow 02</span>
@@ -792,7 +807,7 @@
             <div class="step-dot green">3</div>
             <div class="step-content">
               <div class="step-title">Spike detection logic</div>
-              <p class="step-desc">A JavaScript code node filters tickets from the last 60 minutes, groups them by module, and identifies the module with the highest concentration of recent tickets. Triggers if 3 or more tickets appear in a single module.</p>
+              <p class="step-desc">A JavaScript code node filters tickets from the last 15 minutes, groups them by module, and identifies the module with the highest concentration of recent tickets. Triggers if 3 or more tickets appear in a single module.</p>
             </div>
           </div>
           <div class="step">
@@ -805,7 +820,6 @@
         </div>
       </div>
     </div>
-
     <div class="email-wrap">
       <div class="output-label">Sample alert email</div>
       <div class="email-preview">
@@ -820,7 +834,7 @@
         </div>
         <div class="email-body">
           <div class="email-alert-banner">⚠ Module Activity Spike Detected</div>
-          <p class="email-p">4 tickets have been recorded in the last 60 minutes. The module with the highest concentration is <strong>Payroll</strong> with 4 tickets. This may indicate a systemic issue beyond individual bugs.</p>
+          <p class="email-p">4 tickets have been recorded in the last 15 minutes. The module with the highest concentration is <strong>Payroll</strong> with 4 tickets. This may indicate a systemic issue beyond individual bugs.</p>
           <table class="email-table">
             <tr><td>Top Module</td><td style="color:#0071e3; font-weight:600;">Payroll</td></tr>
             <tr><td>Tickets in Module</td><td>4</td></tr>
@@ -831,52 +845,101 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- REFLECTIONS -->
-  <section id="reflections">
-    <div class="section-eyebrow">Reflections</div>
-    <h2>What I learned</h2>
-    <p class="section-sub">Five takeaways from building this project.</p>
-
-    <div class="reflections-grid">
-      <div class="reflection-card">
-        <div class="reflection-num">01</div>
-        <div class="reflection-title"> Meaningful impact can be achieved with low-code, well-scoped automation.</div>
-        <p class="reflection-body"> Each step in this workflow is simple: receive data, call an API, parse a response, write a row. The power comes from connecting them together. Low-code tools like n8n make that accessible in a quick and scalable manner. This is based on the assumption that the entire tech stack in the automation is compliant and offers API connection capabilities. </p>
-      </div>
-      <div class="reflection-card">
-        <div class="reflection-num">02</div>
-        <div class="reflection-title">Hard-coded context doesn't scale</div>
-        <p class="reflection-body">In a real company, I would connect the LLM to a retrieval layer or internal knowledge base rather than instructing it on modules directly. This makes suggestions more accurate and reduces maintenance when the product evolves.</p>
-      </div>
-      <div class="reflection-card">
-        <div class="reflection-num">03</div>
-        <div class="reflection-title">The workflow's value is in the layer it adds</div>
-        <p class="reflection-body">It goes hand in hand with an automated customer service agent. It cuts manual triage work and reduces the mental load on agents to diagnose and route tickets. The spike detector adds an additional layer for CX ops managers to investigate recurring issues.</p>
-      </div>
-      <div class="reflection-card">
-        <div class="reflection-num">04</div>
-        <div class="reflection-title">The alerting layer has room to grow</div>
-        <p class="reflection-body">The next iteration would explore richer insights such as trending issue summaries per module, week-on-week comparisons, or escalation recommendations. </p>
-      </div>
-      <div class="reflection-card" style="grid-column: 1 / -1;">
-        <div class="reflection-num">05</div>
-        <div class="reflection-title">Data protection goes beyond the database</div>
-        <p class="reflection-body">This project used synthetic data only, and no real customer information was processed. In production, replacing Google Sheets with an enterprise database handles storage security, but data protection responsibilities don't stop there. User access rights, collection of only the essential data, retention policies, and a Data Protection Impact Assessment must be implemented before actual customer data is collected or processed through new tools. The LLM processing step requires particular attention. Ticket content sent to an external API provider may include personal data, requiring additional checks and agreements before establishing a connection. Credentials in this project are stored in n8n's encrypted credential manager with OAuth scoped to the minimum required permissions.</p>
+    <div class="screenshot-wrap">
+      <div class="output-label">Workflow 2 in n8n</div>
+      <div class="screenshot-box">
+        <img src="Screenshots/workflow_2_canvas.png" alt="n8n canvas showing the CX Lead Alerting Tool workflow: Scheduled trigger → Read ticket log → Code in JavaScript spike detection → Conditional alert email" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="screenshot-placeholder" style="display:none;">
+          <span class="ph-icon">🖼️</span>
+          <span>Image not found at Screenshots/workflow_2_canvas.png</span>
+        </div>
       </div>
     </div>
   </section>
-
+  <div class="divider"></div>
+  <!-- IN PRODUCTION -->
+  <section id="reflections">
+    <div class="section-eyebrow">In production</div>
+    <h2>What changes at company scale</h2>
+    <p class="section-sub">Taking this from prototype to production means revisiting nearly every step in both workflows.</p>
+    <div class="workflow-wrap">
+      <div class="workflow-header">
+        <span class="workflow-badge">Workflow 01</span>
+        <span class="workflow-name">Ticket Classification & Troubleshooting Helper</span>
+      </div>
+      <div class="workflow-body">
+        <div class="steps">
+          <div class="step">
+            <div class="step-dot">1</div>
+            <div class="step-content">
+              <div class="step-title">Ticket intake</div>
+              <p class="step-desc">The webhook stands in for a real ITSM integration. Production means a proper connector for whichever tool the company runs, Zendesk, Jira Service Management, Freshdesk, each with its own schema, authentication, and rate limits.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot">2</div>
+            <div class="step-content">
+              <div class="step-title">Module context</div>
+              <p class="step-desc">The system prompt hard-codes module definitions. That doesn't hold up past a handful of modules, so this would need to pull from an internal knowledge base or retrieval layer instead of manual rewrites every time the product changes.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot">3</div>
+            <div class="step-content">
+              <div class="step-title">Suggested reply</div>
+              <p class="step-desc">An AI-drafted reply can't go straight to a customer unreviewed. Until there's a track record of accuracy, it should sit as a draft for the agent to approve, not an auto-send.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot">4</div>
+            <div class="step-content">
+              <div class="step-title">Writing back</div>
+              <p class="step-desc">Google Sheets accepts anything; a real ITSM ticket means mapping to existing fields, handling a ticket an agent may already be editing, and getting write access most IT teams don't hand out lightly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="workflow-wrap">
+      <div class="workflow-header">
+        <span class="workflow-badge green">Workflow 02</span>
+        <span class="workflow-name">CX Lead Alerting Tool</span>
+      </div>
+      <div class="workflow-body">
+        <div class="steps">
+          <div class="step">
+            <div class="step-dot green">1</div>
+            <div class="step-content">
+              <div class="step-title">Reading the log</div>
+              <p class="step-desc">A shared sheet becomes a live query against the real ITSM system, at whatever volume it actually runs.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot green">2</div>
+            <div class="step-content">
+              <div class="step-title">Spike threshold</div>
+              <p class="step-desc">A fixed count of three tickets in 15 minutes is calibrated to this dataset, not to a module that might see fifty tickets an hour versus one that sees two. Production needs a threshold relative to each module's own baseline.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-dot green">3</div>
+            <div class="step-content">
+              <div class="step-title">Alert output</div>
+              <p class="step-desc">A CX lead acting on a false or under-explained alert has a real cost. Production alerts need trend context over days, not just the last hour, and should create a tracked, ownable item in existing ops tooling, not just an email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transparency-note" style="max-width: none; margin-top: 4px;">
+      <strong style="color: var(--ink); font-weight: 500;">Across both workflows.</strong> Every step here also touches customer data the moment it stops being synthetic. Sending ticket content to an external LLM API, storing it, and routing alerts about it all require a Data Protection Impact Assessment, minimum-necessary data collection, and a data processing agreement with the LLM provider before any of it touches a real customer ticket.
+    </div>
+  </section>
 </div>
-
 <footer>
   <div class="wrap">
     <p>Built with n8n · Claude API · Google Sheets · <a href="https://github.com/Keisi8/Keisi8.github.io" style="color: var(--accent); text-decoration: none;">GitHub →</a></p>
   </div>
 </footer>
-
 </body>
 </html>
